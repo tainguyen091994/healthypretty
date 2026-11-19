@@ -1,0 +1,21 @@
+{
+  "_readme": "Pharmacist-editable. Each rule: a and b are lists of active tags (see lib/types.ts ActiveTag). 'when' is 'same-session' (same morning or same evening) or 'morning' (tag a must not be used in the morning). severity 'avoid' blocks the pair in a generated routine; 'caution' only shows the note. Change 'note' freely; it is shown to the customer as written.",
+  "version": "2026-11-19",
+  "reviewedBy": null,
+  "rules": [
+    {"id": "retinoid-acids", "a": ["retinoid"], "b": ["aha", "bha"], "when": "same-session", "severity": "avoid",
+     "note": "Retinoid và AHA/BHA dễ làm da khô rát khi dùng cùng tối. Dùng xen kẽ: tối này retinoid, tối sau tẩy da chết."},
+    {"id": "retinoid-bpo", "a": ["retinoid"], "b": ["bpo"], "when": "same-session", "severity": "avoid",
+     "note": "Benzoyl peroxide và retinoid cùng lúc dễ gây kích ứng. Tách sáng và tối, hoặc dùng xen kẽ ngày."},
+    {"id": "retinoid-vitc", "a": ["retinoid"], "b": ["vitc"], "when": "same-session", "severity": "avoid",
+     "note": "Vitamin C hợp buổi sáng, retinoid hợp buổi tối. Không xếp chung một buổi."},
+    {"id": "bpo-vitc", "a": ["bpo"], "b": ["vitc"], "when": "same-session", "severity": "avoid",
+     "note": "Benzoyl peroxide có thể làm giảm tác dụng của vitamin C. Tách hai buổi."},
+    {"id": "acids-acids", "a": ["aha"], "b": ["bha"], "when": "same-session", "severity": "caution",
+     "note": "AHA và BHA cùng tối có thể quá mạnh với da mỏng. Bắt đầu với một loại."},
+    {"id": "retinoid-morning", "a": ["retinoid"], "b": [], "when": "morning", "severity": "avoid",
+     "note": "Retinoid dùng buổi tối. Ban ngày luôn dùng kem chống nắng."},
+    {"id": "acids-morning", "a": ["aha"], "b": [], "when": "morning", "severity": "caution",
+     "note": "AHA làm da nhạy nắng hơn. Nếu dùng buổi sáng, kem chống nắng là bắt buộc."}
+  ]
+}

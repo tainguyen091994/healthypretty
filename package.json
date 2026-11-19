@@ -1,0 +1,27 @@
+{
+  "name": "healthypretty",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "node scripts/prep_preview.mjs && STATIC_EXPORT=1 next build",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test --experimental-strip-types tests/*.test.mjs",
+    "test:e2e": "node tests/e2e.mjs"
+  },
+  "dependencies": {
+    "lucide-react": "0.469.0",
+    "next": "15.5.29",
+    "react": "19.1.1",
+    "react-dom": "19.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.2",
+    "@types/react": "19.1.10",
+    "@types/react-dom": "19.1.7",
+    "typescript": "5.7.2"
+  },
+  "type": "module"
+}
